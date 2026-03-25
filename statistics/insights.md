@@ -174,3 +174,264 @@ still completely wrong because
 of who was excluded.
 [video](https://www.youtube.com/watch?v=vikkiwjQqfU)
 
+## Mean
+
+**WHAT IT IS -**  
+Average of all values; gives a central number.  
+Sensitive to extremes, so one outlier can shift it a lot.  
+
+**FORMULA -**  
+Mean = Σx / n  
+Add all values and divide by total count.  
+
+**BUSINESS INSIGHT -**  
+Mean can hide real segments in skewed data.  
+Always ask: “Is this average representing most users or just extremes?”  
+
+**REAL EXAMPLE -**  
+Avg spend ₹2000 but most users spend ₹300–₹500.  
+Strategy based on mean will fail majority users.  
+
+**WATCH OUT FOR -**  
+Misleading when outliers exist.  
+Always pair with median or distribution.  
+
+
+## Weighted Mean
+
+**WHAT IT IS -**  
+Average where some values matter more.  
+Reflects real contribution instead of equal treatment.  
+
+**FORMULA -**  
+Σ(x·w) / Σw  
+
+**BUSINESS INSIGHT -**  
+Critical when volumes differ (revenue, traffic).  
+Prevents wrong decisions from simple averages.  
+
+**REAL EXAMPLE -**  
+100 low-value users vs 1 high-value user.  
+Weighted mean reflects true business impact.  
+
+**WATCH OUT FOR -**  
+Wrong weights = wrong insights.  
+
+
+## Trimmed Mean
+
+**WHAT IT IS -**  
+Mean after removing extreme values.  
+Focuses on core data.  
+
+**FORMULA -**  
+Remove top & bottom %, then compute mean.  
+
+**BUSINESS INSIGHT -**  
+Useful when outliers are noise.  
+But dangerous if outliers are actual business signals.  
+
+**REAL EXAMPLE -**  
+Removing rare latency spikes to see normal performance.  
+
+**WATCH OUT FOR -**  
+Always ask: “Are outliers noise or signal?”  
+
+
+## Median
+
+**WHAT IT IS -**  
+Middle value in sorted data.  
+Represents the typical user.  
+
+**FORMULA -**  
+Odd → middle  
+Even → average of two middle  
+
+**BUSINESS INSIGHT -**  
+Best for skewed data and real user experience.  
+More reliable than mean in most real-world cases.  
+
+**REAL EXAMPLE -**  
+Median salary shows what most people earn.  
+
+**WATCH OUT FOR -**  
+Ignores extreme values completely.  
+
+
+## Outliers
+
+**WHAT IT IS -**  
+Values far from the rest of data.  
+Can be errors or key insights.  
+
+**FORMULA -**  
+< Q1 − 1.5×IQR or > Q3 + 1.5×IQR  
+
+**BUSINESS INSIGHT -**  
+Outliers often contain highest value insights (VIP users, fraud).  
+Removing them blindly = losing business intelligence.  
+
+**REAL EXAMPLE -**  
+Top 1% users driving huge revenue.  
+
+**WATCH OUT FOR -**  
+Always investigate before removing.  
+
+
+## Robust Estimates
+
+**WHAT IT IS -**  
+Metrics not affected much by outliers.  
+Examples: median, IQR, MAD.  
+
+**FORMULA -**  
+Depends on metric.  
+
+**BUSINESS INSIGHT -**  
+Better for messy real-world data.  
+Provides stable insights when data is skewed.  
+
+**REAL EXAMPLE -**  
+Median income instead of mean income.  
+
+**WATCH OUT FOR -**  
+Can hide extreme but important behavior.  
+
+
+## Variance
+
+**WHAT IT IS -**  
+Measures spread using squared differences from mean.  
+Captures overall variability.  
+
+**FORMULA -**  
+Σ(x − x̄)² / (n−1)  
+
+**BUSINESS INSIGHT -**  
+High variance = unpredictability and risk.  
+Same average ≠ same stability.  
+
+**REAL EXAMPLE -**  
+Two stores same avg sales, one fluctuates heavily.  
+
+**WATCH OUT FOR -**  
+Hard to interpret (squared units).  
+
+
+## Standard Deviation
+
+**WHAT IT IS -**  
+Square root of variance; average distance from mean.  
+Most practical measure of consistency.  
+
+**FORMULA -**  
+SD = √Variance  
+
+**BUSINESS INSIGHT -**  
+Tells reliability of a metric.  
+Same mean + different SD = different risk levels.  
+
+**REAL EXAMPLE -**  
+Delivery time same avg, but one is consistent.  
+
+**WATCH OUT FOR -**  
+Sensitive to outliers.  
+
+
+## Mean Absolute Deviation
+
+**WHAT IT IS -**  
+Average of absolute differences from mean.  
+Simple and intuitive spread measure.  
+
+**FORMULA -**  
+Σ|x − x̄| / n  
+
+**BUSINESS INSIGHT -**  
+Easy to explain to stakeholders.  
+
+**REAL EXAMPLE -**  
+Avg delivery varies by ~8 mins.  
+
+**WATCH OUT FOR -**  
+Less used in advanced modeling.  
+
+
+## Median Absolute Deviation
+
+**WHAT IT IS -**  
+Median of absolute differences from median.  
+Robust variability measure.  
+
+**FORMULA -**  
+median(|x − median|)  
+
+**BUSINESS INSIGHT -**  
+Best for skewed data with outliers.  
+
+**REAL EXAMPLE -**  
+Income distribution analysis.  
+
+**WATCH OUT FOR -**  
+Less common in dashboards.  
+
+
+## Range
+
+**WHAT IT IS -**  
+Difference between max and min values.  
+Simplest spread measure.  
+
+**FORMULA -**  
+Max − Min  
+
+**BUSINESS INSIGHT -**  
+Shows extreme limits, not typical behavior.  
+
+**REAL EXAMPLE -**  
+Delivery: 10 mins to 2 hours.  
+
+**WATCH OUT FOR -**  
+Driven entirely by outliers.  
+
+
+## Percentiles
+
+**WHAT IT IS -**  
+Value below which a % of data lies.  
+Shows position in distribution.  
+
+**FORMULA -**  
+Based on sorted data.  
+
+**BUSINESS INSIGHT -**  
+Enables segmentation (top users, bottom users).  
+More actionable than averages.  
+
+**REAL EXAMPLE -**  
+Top 10% users drive most revenue.  
+
+**WATCH OUT FOR -**  
+Different tools compute slightly differently.  
+
+
+## Interquartile Range (IQR)
+
+**WHAT IT IS -**  
+Spread of middle 50% of data.  
+Ignores extreme values.  
+
+**FORMULA -**  
+IQR = Q3 − Q1  
+
+**BUSINESS INSIGHT -**  
+Shows true variability of typical users.  
+Very useful for detecting outliers and stable patterns.  
+
+**REAL EXAMPLE -**  
+Most users spend ₹500–₹1500 → IQR captures this.  
+
+**WATCH OUT FOR -**  
+Ignores extremes completely.  
+
