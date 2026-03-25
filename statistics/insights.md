@@ -28,3 +28,25 @@ One looks backward. One looks forward.
 
 
 [video](https://www.youtube.com/watch?v=oI3hZJqXJuc)
+
+## Population Parameters
+<img width="974" height="257" alt="image" src="https://github.com/user-attachments/assets/38734cbb-03ec-459d-a1cb-5cc262336041" />
+
+The parameters that determine how a distribution fits the population data are called population parameters.
+We never measure the full population — we always work 
+with a sample. Population parameters (true mean, true 
+variance) are what we are trying to estimate.
+
+The dangerous assumption: that our sample looks like 
+the full population. If the sample is biased — only 
+loyal customers, only desktop users, only one country 
+— every parameter we calculate is wrong, and every 
+decision built on it is wrong too.
+
+Real risk: Zalando surveying only loyal customers and 
+treating the results as representative of all European 
+shoppers. The sample does not represent the population. 
+The strategy built on it will fail.
+Always ask: who is NOT in my sample?
+[video](https://www.youtube.com/watch?v=vikkiwjQqfU)
+
