@@ -5,3 +5,5 @@
 ## Lession-2
 <img width="1054" height="576" alt="image" src="https://github.com/user-attachments/assets/14c7819b-1528-450e-b3c2-c8d5cb7b64b9" />
 
+## Lession-3
+<img width="988" height="542" alt="image" src="https://github.com/user-attachments/assets/c62f26b8-19bb-4616-b7a1-8462547bdc74" />
